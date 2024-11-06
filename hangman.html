@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="hangman.css">
+</head>
+<body>
+    <h1>Hangman Game</h1>
+    <div id="game-container">
+        <div id="hangman">
+            <div class="stand" id="base"></div>
+            <div class="stand" id="vertical"></div>
+            <div class="stand" id="horizontal"></div>
+            <div class="stand" id="rope"></div>
+            <div class="part" id="head"></div>
+            <div class="part" id="body"></div>
+            <div class="part" id="left-arm"></div>
+            <div class="part" id="right-arm"></div>
+            <div class="part" id="left-leg"></div>
+            <div class="part" id="right-leg"></div>
+        </div>
+        <p id="word"></p>
+        <p id="message"></p>
+        <div id="letters"></div>
+        <button id="restart">Restart Game</button>
+    </div>
+    <script src="hangman.js"></script>
+</body>
+</html>

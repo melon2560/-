@@ -1,0 +1,224 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url("img/mogutata_haikei.jpg");
+    background-size:cover;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+h1 span{
+    color: #fff;
+    background-color: #8B4513;
+    /*border-bottom: solid #000;*/
+}
+
+#score-board {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background-color: #8B4513;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mole {
+    width: 80px;
+    height: 80px;
+    /*background-color: #708090;*/
+    border-radius: 50%;
+    position: absolute;
+    top: 110%;
+    left: 10px;
+    transition: top 1s;
+    background-image: url('img/mogura.jpg'); /* 画像のURLを指定 */
+    background-size: cover;
+    background-position: center;
+}
+
+.mole.show {
+    top: 10px;
+    transition: top 0.3s;
+}
+
+.hidden {
+    display: none;
+}
+
+#end-message {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.iranai{
+    display: none;
+}
+
+#score-board{
+    background-color: darkmagenta;
+    color: greenyellow;
+}
+
+/* 変更点: オープニング画面のスタイル追加 */
+#opening {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#game.hidden {
+    display: none;
+}
+
+#opening-start-button{
+    width: 200px; /* ボタンの幅を設定 */
+    height: 60px; /* ボタンの高さを設定 */
+    font-size: 24px; /* フォントサイズを大きくする */
+    padding: 10px 20px; /* パディングを調整 */
+    border-radius: 10px; /* 角を丸くする */
+    margin-top: 20px; /* 上に余白を追加 */
+}
+
+
+/* スタートボタンのアニメーションスタイルを追加 */
+#opening-start-button.slide.skew::after {
+  transform: skewY(-10deg) scale(1, 0);
+  height: 50px; /* ボタンの高さによって調整 */
+}
+
+#opening-start-button.slide.skew:hover::after {
+  transform: skewY(-10deg) scale(1, 1);
+}
+
+
+/* 変更点: カウントダウン表示のスタイル追加 */
+#countdown {
+    font-size: 48px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+/* アニメーション */
+.c-btn.slide {
+    background: #fff;
+    color: #ff701e;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .c-btn.slide::after {
+    background: #ff701e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+    z-index: -1;
+  }
+  
+  .c-btn.slide:hover {
+    color: #fff;
+  }
+  
+  .c-btn.slide:hover::after {
+    transform: scale(1, 1);
+  }
+
+
+
+
+
+/* 追加: タイトルのアニメーションスタイル */
+.title-animation {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: titleFadeIn 3s ease-out forwards;
+  }
+  
+  @keyframes titleFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(-25px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 追加: タイトルの回転アニメーションスタイル */
+.title-animation {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: titleFadeIn 3s ease-out forwards, titleRotate 2s 3s ease-out forwards;
+  }
+  
+  @keyframes titleFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(-25px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes titleRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(2160deg); /* 6回転 (360度 x 6) */
+    }
+  }
+  
+
+  /*ダイアログ*/
+dialog {
+    border: solid 1px #000;
+    width: 500px;
+    background-color: #E3F2FD;
+    color: red;
+    text-align: center;
+}
+
+#diames{
+    color: #ffa500;
+}
+
+  
