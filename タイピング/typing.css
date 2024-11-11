@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#word-container {
+    margin-bottom: 20px;
+}
+
+#word {
+    font-size: 20px;
+    margin-bottom: 10px;
+    user-select: none; /* 文字列選択を無効化 */
+}
+
+#romaji {
+    font-size: 24px; /* フォントサイズを大きくする */
+    color: #555;
+    user-select: none; /* 文字列選択を無効化 */
+}
+
+#input {
+    font-size: 16px;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.correct {
+    background-color: yellow; /* 正しい文字に黄色のマーカーを付ける */
+}
+
+.incorrect {
+    background-color: red; /* 不正確な文字に赤のマーカーを付ける */
+}
+
+#timer {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+}
+
+/* アニメーション */
+.anime-object {
+    animation-name: fade-in;/*keyframesと紐づける*/
+    animation-duration: 1s;/*3秒かけて動く*/
+    animation-iteration-count: 1;/*1回限り*/
+    animation-delay: 0.5s;/*読み込んでから2秒後に実行*/
+    animation-fill-mode: forwards;/*実行後キーフレームの設定を維持*/
+    animation-timing-function: ease-in-out;/*徐々に加速して減速する動き方*/
+  }
+  .circle{
+    /*width: 100px;
+    height: 100px;*/
+    margin: 0 auto;
+    border-radius: 50px;
+    /*background-color: #15aaa1; */
+    opacity:0;
+  }
+  
+  @keyframes fade-in {
+      0% {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
