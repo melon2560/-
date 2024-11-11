@@ -1,0 +1,147 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#game-container {
+    text-align: center;
+}
+
+#hangman {
+    margin: 20px;
+    position: relative;
+    width: 200px;
+    height: 250px;
+}
+
+.stand {
+    background-color: #000;
+    position: absolute;
+}
+
+#base {
+    width: 150px;
+    height: 10px;
+    bottom: 0;
+    left: 25px;
+}
+
+#vertical {
+    width: 10px;
+    height: 200px;
+    bottom: 0;
+    left: 90px;
+}
+
+#horizontal {
+    width: 75px;
+    height: 10px;
+    top: 0;
+    left: 90px;
+}
+
+#rope {
+    width: 10px;
+    height: 40px;
+    top: 10px;
+    left: 155px;
+}
+
+.part {
+    display: none;
+    position: absolute;
+    background-color: #000;
+}
+
+#head {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 50px;
+    left: 130px;
+}
+
+#body {
+    width: 10px;
+    height: 100px;
+    top: 100px;
+    left: 150px;
+}
+
+#left-arm {
+    width: 10px;
+    height: 50px;
+    top: 110px;
+    left: 100px;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+}
+
+#right-arm {
+    width: 10px;
+    height: 50px;
+    top: 110px;
+    left: 200px;
+    transform: rotate(45deg);
+    transform-origin: top right;
+}
+
+#left-leg {
+    width: 10px;
+    height: 50px;
+    top: 200px;
+    left: 120px;
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+#right-leg {
+    width: 10px;
+    height: 50px;
+    top: 200px;
+    left: 180px;
+    transform: rotate(-45deg);
+    transform-origin: top right;
+}
+
+#word {
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    margin: 20px 0;
+}
+
+#letters {
+    margin: 20px 0;
+}
+
+.letter {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.letter.correct {
+    background-color: #28a745;
+    color: #fff;
+    cursor: default;
+}
+
+.letter.incorrect {
+    background-color: #dc3545;
+    color: #fff;
+    cursor: default;
+}
+
+#restart {
+    padding: 10px 20px;
+    font-size: 1em;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PK</title>
+    <link rel="stylesheet" href="pk.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="game-container">
+        <div class="goal">
+            <div class="section" data-section="0"></div>
+            <div class="section" data-section="1"></div>
+            <div class="section" data-section="2"></div>
+            <div class="section" data-section="3"></div>
+            <div class="section" data-section="4"></div>
+            <div class="section" data-section="5"></div>
+            <div class="keeper"></div>
+        </div>
+        <div class="ball-container">
+            <div class="ball"></div>
+        </div>
+        <p id="message">シュートしろ！</p>
+    </div>
+
+    <div id="gameOverDialog" class="dialog">
+        <div class="dialog-content">
+            <p>ゲームオーバー！最終ゴール数: <span id="finalScore"></span></p>
+            <p>現在のスコア<span id="kasanScore"></span></p>
+            <button id="nextMapButton">次のマップへ</button>
+        </div>
+    </div>
+
+    <script src="pk.js"></script>
+    <audio id="bgm" src="bgm/maou_bgm_8bit13.mp3" loop></audio>
+</body>
+</html>
