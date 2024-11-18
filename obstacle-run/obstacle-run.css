@@ -44,3 +44,13 @@ body {
     cursor: pointer;
   }
   
+  #player {
+    position: absolute;
+    bottom: 0;
+  }
+  
+  #obstacle {
+    position: absolute;
+    bottom: 0;
+  }
+  
