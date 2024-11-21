@@ -12,19 +12,48 @@ let playerPosition = 0; // プレイヤーの位置
 let hasJumped = false; // プレイヤーがジャンプしたかどうかのフラグ
 let speed = 5; // 初期スピード
 let resetCount = 0; // 障害物がリセットされた回数
+let score = 0;  // スコア
+
+const scoreDisplay = document.createElement("div"); // スコア表示用の要素を作成
+scoreDisplay.id = "score"; // IDを設定
+document.getElementById("game").appendChild(scoreDisplay); // ゲームエリアに追加
+
+// カウントダウン表示用の要素を作成
+const countdownDisplay = document.createElement("div");
+countdownDisplay.id = "countdown";
+document.getElementById("game").appendChild(countdownDisplay);
 
 // ゲーム開始ボタンのクリックイベントを追加
 startButton.addEventListener("click", startGame);
 
 // ゲームを開始する関数
 function startGame() {
-  isGameOver = false; // ゲームオーバーをリセット
-  playerPosition = 0; // プレイヤーの位置をリセット
-  obstacle.style.left = "600px"; // 障害物の位置をリセット
-  hasJumped = false; // フラグをリセット
-  document.addEventListener("keydown", jump); // キーボードのイベントリスナーを追加
   startButton.disabled = true; // ゲーム開始ボタンを無効化
-  gameLoop(); // ゲームループを開始
+  let count = 3;
+  
+  // カウントダウンの表示を開始
+  const countdownInterval = setInterval(() => {
+    if (count > 0) {
+      countdownDisplay.textContent = `${count}秒後にゲーム開始`;
+      count--;
+    } else {
+      clearInterval(countdownInterval);
+      countdownDisplay.textContent = "";
+      initializeGame(); // 実際のゲーム開始処理
+    }
+  }, 1000);
+}
+
+// 実際のゲーム初期化処理を新しい関数に移動
+function initializeGame() {
+  isGameOver = false;
+  playerPosition = 0;
+  score = 0;
+  obstacle.style.left = "600px";
+  hasJumped = false;
+  document.addEventListener("keydown", jump);
+  gameLoop();
+  updateScore();
 }
 
 // ジャンプする関数
@@ -67,7 +96,9 @@ function gameLoop() {
     obstacle.style.left = "600px";
 
     resetCount += 1; // リセットカウンターを増加
-    
+
+    score += 10
+
     // 3回リセットされたらスピードを上げる
     if (resetCount >= 3) {
       speed += 0.5; // スピードを上げる
@@ -101,6 +132,8 @@ function gameLoop() {
   if (!isGameOver) { // ゲームが終了していない場合
     requestAnimationFrame(gameLoop); // ゲームループを継続
   }
+
+  updateScore(); // スコアを更新
 }
 
 // ゲームオーバーを宣言する関数
@@ -109,4 +142,9 @@ function gameOver() {
   startButton.disabled = false; // ゲーム開始ボタンを有効化
   alert("ゲームオーバー！"); // アラートでゲームオーバーを表示
   document.removeEventListener("keydown", jump); // キーボードのイベントリスナーを削除
+}
+
+// スコアを更新して表示する関数
+function updateScore() {
+  scoreDisplay.textContent = `スコア: ${score}`; // スコアを表示
 }
