@@ -1,0 +1,44 @@
+/* styles.css */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    flex-direction: column;
+}
+
+#gameCanvas {
+    border: 1px solid #fff;
+    background-color: #111;
+}
+
+#ui {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.dialog-content {
+    text-align: center;
+}
+
+#gameOverDialog.show {
+    display: block;
+}

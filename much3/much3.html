@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match-3 パズルゲーム</title>
+    <link rel="stylesheet" href="much3.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="opening-screen">
+            <h1>マッチ3パズル</h1>
+            <button id="start-button">スタート</button>
+        </div>
+        <div id="countdown-screen" style="display:none;">
+            <p id="countdown">3</p>
+        </div>
+        <div id="game-screen" style="display:none;">
+            <div id="game-board"></div>
+            <div id="info-panel">
+                <p>残り手数: <span id="moves-left"></span></p>
+                <p>スコア: <span id="current-score"></span></p>
+            </div>
+        </div>
+        <div id="end-screen" style="display:none;">
+            <p>最終スコア: <span id="final-score"></span></p>
+            <button id="end-button">終了</button>
+        </div>
+    </div>
+    <script src="much3.js"></script>
+</body>
+</html>
