@@ -24,32 +24,20 @@ let dialogues = [
 let currentDialogue = 0;
 
 function startGame1() {
-    document.getElementById('prologue-screen').style.display = 'none';
-    document.getElementById('story-dialogue').style.display = 'flex';
-    showNextDialogue();
+    // この関数を削除
 }
+
 function startGame2() {
     document.getElementById('prologue-screen').style.display = 'none';
     document.getElementById('character-screen').style.display = 'block';
 }
 
 function showNextDialogue() {
-    if (currentDialogue < dialogues.length) {
-        document.getElementById('character-screen').style.display = 'none'; // キャラクター紹介画面を非表示
-        const dialogue = dialogues[currentDialogue];
-        document.getElementById('dialogue-content').textContent = dialogue.text;
-        document.getElementById('character-icon').src = dialogue.character;
-        document.getElementById('character-icon').style.display = dialogue.character ? 'block' : 'none';
-        currentDialogue++;
-    } else {
-        document.getElementById('story-dialogue').style.display = 'none';
-        //document.getElementById('character-screen').style.display = 'block';
-        showStory();
-    }
+    // この関数を削除
 }
 
 function nextDialogue() {
-    showNextDialogue();
+    // この関数を削除
 }
 
 let endingDialogues = [
@@ -574,7 +562,7 @@ function switchBGM(newSrc) {
     bgm.play(); // 新しいBGMを再生
 }
 
-// 例えばボタンがクリックされたらBGMを切り替える
+// 例えばボタンがクリックされたらBGMを切り��える
 document.getElementById('switch-button').addEventListener('click', function() {
     switchBGM('bgm/maou_bgm_fantasy12.mp3'); // 切り替えたいBGMのパスを指定
 });

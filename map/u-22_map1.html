@@ -11,26 +11,8 @@
 <body>
     <!-- スタート画面 -->
     <div id="prologue-screen" class="screen">
-        <h1>旅する新潟 ～笑顔あふれる癒しの旅路～<br>新潟駅編</h1>
+        <h1>マリオパーティー</h1>
         <button onclick="startGame2()" id="start-button">ゲームを始める</button>
-    </div>
-    <!-- 会話表示 -->
-    <div id="story-dialogue" class="dialogue" style="display: none;">
-        <div class="dialogue-box">
-            <img id="character-icon" src="" alt="キャラクター" class="character-icon">
-            <div class="dialogue-text">
-                <p id="dialogue-content"></p>
-            </div>
-            <button onclick="nextDialogue()">次へ</button>
-        </div>
-    </div>
-    <!-- キャラクター紹介画面 -->
-    <div id="character-screen" class="screen" style="display: none;">
-        <h2>キャラクター紹介</h2>
-        <p><strong>アキラ</strong>: 男</p>
-        <p><strong>ユイ</strong>: 女</p>
-        <p><strong>ニイガタ</strong>: 妖精</p>
-        <button onclick="startGame1()" id="switch-button">次へ</button>
     </div>
     <!-- カスタムアラート -->
     <div id="custom-alert" class="custom-alert" style="display: none;">
@@ -39,25 +21,12 @@
             <button onclick="closeCustomAlert()">OK</button>
         </div>
     </div>
-    <!-- ナレーション表示 -->
-    <div id="ending-narration" class="dialogue" style="display: none;">
-        <div class="dialogue-box">
-            <img id="ending-character-icon" src="" alt="キャラクター" class="character-icon">
-            <div class="dialogue-text">
-                <p id="ending-narration-content"></p>
-            </div>
-            <button onclick="showNextEndingDialogue()">次へ</button>
-        </div>
-    </div> 
     <!-- ゲームボード -->
     <div class="board" id="board" style="display: none;"></div>
     <div class="controls" style="display: none;">
         <button onclick="resetPlayer()" style="display: none;">リセット</button>
         <p class="status" id="dice-result">サイコロの目: -</p>
         <p class="status" id="player-position">プレイヤーの位置: 1</p>
-        <p class="status" id="player-hp">HP: 25</p>
-        <p class="status" id="player-coins" style="display: none;">コイン: 0</p>
-        <p class="status" id="player-items" style="display: none;">アイテム: なし</p>
         <p class="status" id="player-score">スコア: 0</p>
     </div>
     <!-- サイコロ -->
@@ -68,66 +37,7 @@
     <!-- ダイアログ -->
     <dialog id="myDialog">
         <p id="diames">クリア!!</p>
-        <button id="nextMapButton">次のマップへ</button>
     </dialog>
-
-    <!-- 名産品紹介 -->
-    <div id="cover" class="cover"></div>
-    <div id="story-dialogue1" class="dialogue syoukai" style="display: none;">
-        <p class="dialogue-heading">おすすめのお土産<br></p>
-        <p><img src="img/sweets_sasadango.png" alt="" width="300" height="300"><br></p>
-        <p class="koredesu">《笹団子》<br></p>
-        <div class="dialogue-box">
-            <div class="dialogue-text">
-                <p id="dialogue-content">笹の葉でよもぎのお団子をくるんだものです。笹の葉の風味が食欲を引き立てます。</p>
-            </div>
-            <button onclick="closeStory1()">次へ</button>
-        </div>
-    </div>
-    <div id="story-dialogue2" class="dialogue syoukai" style="display: none;">
-        <p class="dialogue-heading">おすすめのお土産<br></p>
-        <p><img src="img/food_yogurt.png" alt="" width="300" height="300"><br></p>
-        <p class="koredesu">《安田ヨーグルト》<br></p>
-        <div class="dialogue-box">
-            <div class="dialogue-text">
-                <p id="dialogue-content">新潟県民が飲むヨーグルトといえばこれ。プレーン以外にも、期間限定の味を含むさまざまなバリエーションがあります。</p>
-            </div>
-            <button onclick="closeStory2()">次へ</button>
-        </div>
-    </div>
-    <div id="story-dialogue3" class="dialogue syoukai" style="display: none;">
-        <p class="dialogue-heading">おすすめのお土産<br></p>
-        <p><img src="img/sweets_kakipi.png" alt="" width="300" height="300"><br></p>
-        <p class="koredesu">《亀田の柿の種》<br></p>
-        <div class="dialogue-box">
-            <div class="dialogue-text">
-                <p id="dialogue-content">全国的に知られている米菓。実はハリウッドデビューしている！？</p>
-            </div>
-            <button onclick="closeStory3()">次へ</button>
-        </div>
-    </div>
-    <div id="story-dialogue4" class="dialogue syoukai" style="display: none;">
-        <p class="dialogue-heading">おすすめのお土産<br></p>
-        <p><img src="img/money_koban.png" alt="" width="300" height="300"><br></p>
-        <p class="koredesu">《小判飴》<br></p>
-        <div class="dialogue-box">
-            <div class="dialogue-text">
-                <p id="dialogue-content">世界遺産にも登録された佐渡金山のお土産。佐渡に修学旅行に行った小学生の99%はお土産として買ってくる事でもおなじみ。</p>
-            </div>
-            <button onclick="closeStory4()">次へ</button>
-        </div>
-    </div>
-    <div id="story-dialogue5" class="dialogue syoukai" style="display: none;">
-        <p class="dialogue-heading">おすすめのお土産<br></p>
-        <p><img src="img/food_soba_hegisoba.png" alt="" width="300" height="300"><br></p>
-        <p class="koredesu">《へぎそば》<br></p>
-        <div class="dialogue-box">
-            <div class="dialogue-text">
-                <p id="dialogue-content">ふのり（海藻）がつなぎに使われているのが特徴のそば。お店でも食べれる。</p>
-            </div>
-            <button onclick="closeStory5()">次へ</button>
-        </div>
-    </div>
 
     <!-- スタイルシート -->
     <link rel="stylesheet" href="u-22_map1.css">

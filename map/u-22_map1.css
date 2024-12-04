@@ -26,38 +26,7 @@ body {
 }
 
 .dialogue {
-    position: fixed;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 90%;
-    max-width: 600px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-}
-
-.dialogue-box {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.character-icon {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-    border-radius: 10px;
-}
-
-.dialogue-text {
-    flex: 1;
+    display: none; /* このスタイルを削除 */
 }
 
 .custom-alert {
