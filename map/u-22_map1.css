@@ -5,13 +5,13 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: url('img/background_map1.jpg'); /* 背景画像のURLを指定 */
-    background-size: cover; /* 画像を全体にフィットさせる */
+    background-image: url('img/map.png'); /* マップの背景画像のURLを指定 */
     background-repeat: no-repeat; /* 画像を繰り返さない */
     background-attachment: fixed; /* 背景画像を固定 */
     margin: 0;
     padding: 0; /* パディングを0に設定 */
     overflow: hidden; /* ページのスクロールを防ぐ */
+    background-position: 50% 50%; /* 背景画像の位置を中央に設定 */
 }
 
 .screen {
