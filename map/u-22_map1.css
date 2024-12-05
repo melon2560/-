@@ -7,6 +7,9 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    background-image: url('img/map.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .screen {
