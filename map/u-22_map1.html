@@ -7,23 +7,19 @@
     <link rel="stylesheet" href="u-22_map1.css">
 </head>
 <body>
-    <!-- スタート画面 -->
-    <div id="prologue-screen" class="screen">
-        <h1>マリオパーティー</h1>
-        <button onclick="startGame()" id="start-button">ゲームを始める</button>
+    <!-- ゲームエリア全体を包含するコンテナ -->
+    <div class="game-container" id="gameContainer">
+        <!-- キャラクター要素（プレイヤーの駒） -->
+        <div class="character" id="character"></div>
     </div>
 
-    <!-- ステータス表示 -->
-    <div class="controls" style="display: none;">
-        <p class="status" id="dice-result">サイコロの目: -</p>
-        <p class="status" id="player-position">位置: 1</p>
+    <!-- コントロールエリア（ボタンやメッセージ表示） -->
+    <div class="controls">
+        <!-- サイコロを振るボタン -->
+        <button class="dice-button" id="rollButton">サイコロを振る</button>
+        <!-- サイコロの目やステータスメッセージ表示エリア -->
+        <div class="message" id="message"></div>
     </div>
-
-    <!-- サイコロ -->
-    <section class="diceContent" style="display: none;">
-        <img id="dice" src="img/d1.png" alt="サイコロ">
-        <button type="button" id="diceBtn">サイコロを振る</button>
-    </section>
 
     <script src="u-22_map1.js"></script>
 </body>

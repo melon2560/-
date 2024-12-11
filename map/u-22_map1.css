@@ -1,75 +1,51 @@
+/* 全体のデフォルト設定 */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-image: url('img/map.png');
-    background-size: cover;
-    background-position: center;
+    margin: 0; /* 画面全体の余白をなくす */
+    background: #eee; /* 背景色を淡いグレーに設定 */
+    font-family: sans-serif; /* フォントをサンセリフ体に設定 */
+    user-select: none; /* テキスト選択を無効化 */
 }
 
-.screen {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border: 2px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 20px auto;
+/* ゲーム全体を包含するコンテナ */
+.game-container {
+    position: relative; /* 子要素の絶対位置指定を可能にする */
+    width: 100%; /* コンテナの幅を100%に設定 */
+    height: 89vh; /* コンテナの高さを画面の高さに設定 */
+    margin: 0; /* マージンをなくす */
+    background: url('img/map.png') no-repeat center center; /* 背景画像の指定 */
+    background-size: cover; /* 背景画像をコンテナにフィット */
+    border: 2px solid #333; /* 黒色の枠線を追加 */
+    box-sizing: border-box; /* パディングや枠線をサイズに含む */
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #2196f3;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 5px;
+/* キャラクター（プレイヤーの駒） */
+.character {
+    position: absolute; /* コンテナ内での位置指定を可能にする */
+    width: 80px; /* キャラクター画像の幅 */
+    height: 80px; /* キャラクター画像の高さ */
+    background: url('img/rumi.png') no-repeat center center; /* キャラクター画像を中央配置 */
+    background-size: contain; /* 画像のアスペクト比を維持しつつフィット */
+    transition: left 1s ease, top 1s ease; /* なめらかな移動アニメーションを設定 */
 }
 
-button:hover {
-    background-color: #1976d2;
+/* ボタンやメッセージを含むコントロールエリア */
+.controls {
+    display: flex; /* フレックスボックスを使用して横並びにする */
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    margin-top: 20px; /* 上に20pxの余白 */
 }
 
-/* サイコロ関連のスタイル */
-.diceContent {
-    width: 360px;
-    height: 200px;
-    margin: 30px auto;
-    background: #333;
-    border-radius: 20px;
-    position: relative;
+/* サイコロを振るボタン */
+.dice-button {
+    font-size: 20px; /* ボタンの文字サイズ */
+    padding: 10px 20px; /* 内側の余白を設定 */
+    cursor: pointer; /* ホバー時にカーソルを指アイコンに変更 */
+    margin-right: 20px; /* ボタンとメッセージの間に余白を追加 */
 }
 
-#diceBtn {
-    position: absolute;
-    width: 250px;
-    height: 40px;
-    bottom: 1px;
-    left: 50%;
-    transform: translate(-50%);
-    border-radius: 10px;
-}
-
-#dice {
-    position: absolute;
-    width: 120px;
-    top: 20px;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-.status {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px;
+/* サイコロの目やステータスメッセージ表示エリア */
+.message {
+    font-size: 24px; /* 文字サイズ */
+    font-weight: bold; /* 太字 */
 }
