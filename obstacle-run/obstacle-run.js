@@ -148,3 +148,8 @@ function gameOver() {
 function updateScore() {
   scoreDisplay.textContent = `スコア: ${score}`; // スコアを表示
 }
+
+player.style.backgroundColor = ""; // 背景色をクリア
+player.style.backgroundImage = "url('img/rumi.png')"; // 画像を設定
+player.style.backgroundSize = "contain"; // 画像のサイズを調整
+player.style.backgroundRepeat = "no-repeat"; // 画像の繰り返しを無効化
