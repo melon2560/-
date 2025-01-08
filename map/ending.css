@@ -1,0 +1,83 @@
+body {
+    background-image: url('img/end_image.png');
+    background-size: cover; /* 背景画像をカバーする */
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    height: 100vh; /* ビューポートの高さを100%に設定 */
+    margin: 0;
+    position: relative;
+}
+
+#startButton, #nextButton {
+    padding: 15px 30px; 
+    font-size: 22px; 
+    cursor: pointer;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* グラデーションの背景 */
+    color: white;
+    border: none;
+    border-radius: 50px; /* 丸みを帯びた形状 */
+    text-transform: uppercase; /* 大文字に */
+    letter-spacing: 2px; /* 文字間隔 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* 立体感のある影 */
+    transition: all 0.3s ease; /* なめらかな変化 */
+}
+
+#startButton:hover, #nextButton:hover {
+    transform: translateY(-3px); /* 移動量を小さく */
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.35); /* 影の調整 */
+}
+
+#startButton:active, #nextButton:active {
+    transform: translateY(1px); /* わずかな押し込み感 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* 影の調整 */
+}
+
+#dialogueArea {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#characterImage {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 150px;
+    height: 150px;
+}
+
+#dialogueText {
+    position: absolute;
+    left: 200px;
+    right: 20px;
+    bottom: 20px;
+    font-size: 18px;
+}
+
+#nextButton {
+    display: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease;
+}
+
+#nextButton:hover {
+    transform: translateX(-50%) translateY(-3px);
+}
+
+#nextButton:active {
+    transform: translateX(-50%) translateY(1px);
+}
