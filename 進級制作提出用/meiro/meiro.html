@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迷路ゲーム</title>
+    <link rel="stylesheet" href="meiro.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>迷路ゲーム</h1>
+    <div id="opening">
+        <button id="start-button">スタート</button>
+        <div id="countdown" style="display: none;">ゲーム開始まで: 3秒</div>
+    </div>
+    <div id="game" style="display: none;">
+        <div id="timer">タイム: 0秒</div>
+        <div id="maze-container">
+            <canvas id="maze"></canvas>
+        </div>
+    </div>
+    <div id="result-dialog" style="display: none;">
+        <p id="result-message"></p>
+        <button id="continue-button" onclick="location.href='../map/u-22_map1.html'">スタートに戻る</button>
+    </div>
+    <script src="meiro.js"></script>
+</body>
+</html>

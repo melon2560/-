@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooting Game</title>
+    <link rel="stylesheet" href="Shooting.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="ui">
+        <span id="hp">HP: 100</span>
+        <span id="score">Score: 0</span>
+    </div>
+    <div id="gameOverDialog" class="dialog">
+        <div class="dialog-content">
+            <h2>Game Over</h2>
+            <p id="finalScore"></p>
+            <button id="continueButton" onclick="location.href='../map/u-22_map1.html'">マップに戻る</button>
+        </div>
+    </div>
+    <script src="Shooting.js"></script>
+</body>
+</html>

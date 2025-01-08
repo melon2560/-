@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズfever</title>
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 id="quiz-title">クイズfever</h1>
+        <div id="category-container">
+            <button class="btn category-btn c-btn circle" data-category="general">一般知識</button>
+            <button class="btn category-btn c-btn circle" data-category="science">科学</button>
+            <button class="btn category-btn c-btn circle" data-category="history">歴史</button>
+            <button class="btn category-btn c-btn circle" data-category="sports">スポーツ</button>
+            <button class="btn category-btn c-btn circle" data-category="pc">PC</button>
+        </div>
+        <div id="question-container" class="hide">
+            <div id="question">質問がここに表示されます</div>
+            <div id="answer-buttons" class="btn-container"></div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn hide">スタート</button>
+            <button id="next-btn" class="next-btn btn hide">次へ</button>
+        </div>
+    </div>
+
+    <div id="result-dialog" class="modal hide">
+        <div class="modal-content">
+            <span id="close-btn" class="close-btn">&times;</span>
+            <p id="result">結果がここに表示されます</p>
+            <p>現在のスコア<span id="kasanScore"></span></p>
+            <button id="reset-btn" class="reset-btn btn" onclick="location.href='../map/u-22_map1.html'">マップに戻る</button>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+    <audio id="bgm" src="bgm/maou_bgm_8bit13.mp3" loop></audio>
+</body>
+</html>

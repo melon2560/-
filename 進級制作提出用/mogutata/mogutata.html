@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モグラたたきゲーム</title>
+    <link rel="stylesheet" href="mogutata.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="opening">
+        <h1 id="opening-title" class="title-animation"><span>モグラたたきゲーム</span></h1>
+        <button id="opening-start-button" class="c-btn slide">スタート</button>
+    </div>
+    <!-- 変更点: カウントダウン表示用のHTML追加 -->
+    <div id="countdown" class="hidden"></div>
+    <div id="game" class="hidden">
+        <div id="score-board">
+            スコア: <span id="score">0</span>
+        </div>
+        <div class="game">
+            <div class="hole" data-index="0"><div class="mole"></div></div>
+            <div class="hole" data-index="1"><div class="mole"></div></div>
+            <div class="hole" data-index="2"><div class="mole"></div></div>
+            <div class="hole" data-index="3"><div class="mole"></div></div>
+            <div class="hole" data-index="4"><div class="mole"></div></div>
+            <div class="hole" data-index="5"><div class="mole"></div></div>
+            <div class="hole" data-index="6"><div class="mole"></div></div>
+            <div class="hole" data-index="7"><div class="mole"></div></div>
+            <div class="hole" data-index="8"><div class="mole"></div></div>
+        </div>
+        <!-- ダイアログ -->
+        <dialog id="myDialog">
+            <p id="diames">ゲーム終了</p>
+            <p id="dimes2"></p>
+            <p>現在のスコア<span id="kasanScore"></span></p>
+            <button id="closeDialog" onclick="location.href='../map/u-22_map1.html'">マップに戻る</button>
+        </dialog>
+        <div id="end-message" class="hidden iranai">ゲーム終了! 点数: <span id="final-score">0</span></div>
+    </div>
+    <script src="mogutata.js"></script>
+    <audio id="bgm" src="bgm/maou_bgm_8bit13.mp3" loop></audio>
+</body>
+</html>

@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e0f7fa;
+  margin: 0;
+}
+
+#game-container {
+  text-align: center;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  gap: 2px;
+  margin: 20px auto;
+}
+
+#game-board div {
+  width: 50px;
+  height: 50px;
+  background-color: #b2ebf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#info-panel {
+  margin: 10px 0;
+}
+
+#countdown-screen p, #end-screen p {
+  font-size: 2em;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+.draggable {
+  cursor: grab;
+}
+
+.dragging {
+  opacity: 0.5;
+  border: 2px dashed #000;
+}
+
+@keyframes drop {
+  from {
+      transform: translateY(-100px);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+.dropping {
+  animation: drop 0.5s ease-out;
+}
+
+#opening-screen h1 {
+  font-size: 3rem; /* タイトルの大きさを調整 */
+  font-family: 'Comic Sans MS', 'Arial', sans-serif; /* ポップなフォント */
+  color: #ff6f61; /* 明るいオレンジ色で目立たせる */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), 
+               -3px -3px 5px rgba(255, 255, 255, 0.5); /* 立体的な効果 */
+  text-align: center; /* 中央揃え */
+  margin: 20px 0; /* 上下の余白を設定 */
+  background: linear-gradient(90deg, #ff1744, #fbc02d, #64dd17, #00b0ff, #d500f9); /* 虹色のグラデーション */
+  background-clip: text;
+  -webkit-background-clip: text; /* グラデーションのクリップを有効化 */
+  color: transparent; /* 文字色を透明にして背景を見せる */
+  animation: colorCycle 3s infinite; /* 色を変えるアニメーション */
+}
+
+@keyframes colorCycle {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+

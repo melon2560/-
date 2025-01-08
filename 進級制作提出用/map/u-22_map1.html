@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅する新潟</title>
+    <link rel="stylesheet" href="u-22_map1.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- ゲームエリア全体を包含するコンテナ -->
+    <div class="game-container" id="gameContainer">
+        <!-- キャラクター要素（プレイヤーの駒） -->
+        <div class="character" id="character"></div>
+    </div>
+
+    <!-- コントロールエリア（ボタンやメッセージ表示） -->
+    <div class="controls">
+        <!-- サイコロを振るボタン -->
+        <button class="dice-button" id="rollButton">サイコロを振る</button>
+        <!-- サイコロの目やステータスメッセージ表示エリア -->
+        <div class="message" id="message"></div>
+        <div class="message" id="score"></div>
+    </div>
+
+    <!-- ラッキー・アンラッキーダイアログ -->
+    <div class="dialog-overlay" id="dialogOverlay">
+        <div class="dialog" id="dialog">
+            <div class="dialog-message" id="dialogMessage"></div>
+            <button class="dialog-button" id="dialogButton">ミニゲームへ進む</button>
+        </div>
+    </div>
+
+    <script src="u-22_map1.js"></script>
+</body>
+</html>
