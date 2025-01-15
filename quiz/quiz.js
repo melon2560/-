@@ -17,10 +17,10 @@ let shuffledQuestions, currentQuestionIndex;
 let correctAnswers = 0;
 let totalQuestions = 2;  // 出題する問題数を2問に設定
 
-const questions = {
+/*const questions = {
     general: [
         {
-            question: '新潟県で一番高い山はどれですか？',
+            question: '新潟県で一番/*高い山はどれですか？',
             answers: [
                 { text: '八海山', correct: false },
                 { text: '弥彦山', correct: false },
@@ -118,6 +118,109 @@ const questions = {
             ]
         }
     ],
+};*/
+
+const questions = {
+    general: [
+        {
+            question: '日本の首都はどこですか？',
+            answers: [
+                { text: '大阪', correct: false },
+                { text: '京都', correct: false },
+                { text: '東京', correct: true },
+                { text: '福岡', correct: false }
+            ]
+        },
+        {
+            question: '地球は何番目の惑星ですか？',
+            answers: [
+                { text: '1番目', correct: false },
+                { text: '3番目', correct: true },
+                { text: '5番目', correct: false },
+                { text: '7番目', correct: false }
+            ]
+        }
+    ],
+    science: [
+        {
+            question: '太陽系で最も大きな惑星はどれですか？',
+            answers: [
+                { text: '地球', correct: false },
+                { text: '火星', correct: false },
+                { text: '木星', correct: true },
+                { text: '金星', correct: false }
+            ]
+        },
+        {
+            question: 'プログラミング言語「Python」を開発したのは誰ですか？',
+            answers: [
+                { text: 'ジェームズ・ゴスリン', correct: false },
+                { text: 'デニス・リッチー', correct: false },
+                { text: 'グイド・ヴァンロッサム', correct: true },
+                { text: 'ブレンダン・アイク', correct: false }
+            ]
+        }
+    ],
+    history: [
+        {
+            question: '第二次世界大戦は何年に終わりましたか？',
+            answers: [
+                { text: '1945年', correct: true },
+                { text: '1939年', correct: false },
+                { text: '1918年', correct: false },
+                { text: '1965年', correct: false }
+            ]
+        },
+        {
+            question: 'フランス革命は何年に始まりましたか？',
+            answers: [
+                { text: '1789年', correct: true },
+                { text: '1776年', correct: false },
+                { text: '1804年', correct: false },
+                { text: '1815年', correct: false }
+            ]
+        }
+    ],
+    sports: [
+        {
+            question: 'オリンピックのシンボルである五輪のマークは何色の輪で構成されていますか？',
+            answers: [
+                { text: '赤、青、緑、黄、黒', correct: true },
+                { text: '赤、青、白、緑、黒', correct: false },
+                { text: '赤、黄、緑、紫、黒', correct: false },
+                { text: '赤、青、黄、白、黒', correct: false }
+            ]
+        },
+        {
+            question: 'テニスの四大大会の1つ、ウィンブルドンが開催される国はどこですか？',
+            answers: [
+                { text: 'アメリカ', correct: false },
+                { text: 'オーストラリア', correct: false },
+                { text: 'フランス', correct: false },
+                { text: 'イギリス', correct: true }
+            ]
+        }
+    ],
+    pc: [
+        {
+            question: 'パソコンのCPUは何の略ですか？',
+            answers: [
+                { text: 'Central Processing Unit', correct: true },
+                { text: 'Computer Power Unit', correct: false },
+                { text: 'Control Processing Unit', correct: false },
+                { text: 'Central Power Unit', correct: false }
+            ]
+        },
+        {
+            question: 'グラフィックカードの主な役割は何ですか？',
+            answers: [
+                { text: 'データの保存と読み込み', correct: false },
+                { text: 'インターネット接続の管理', correct: false },
+                { text: '画像やビデオの処理と表示', correct: true },
+                { text: 'キーボードとマウスの制御', correct: false }
+            ]
+        }
+    ],
 };
 
 categoryButtons.forEach(button => {
@@ -143,6 +246,8 @@ function selectCategory(category) {
 }
 
 function startGame() {
+    var bgm = document.getElementById('bgm');
+    bgm.play();
     startButton.classList.add('hide');
     quizTitle.classList.add('hide');
     resultDialog.classList.add('hide');

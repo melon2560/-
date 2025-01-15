@@ -81,3 +81,16 @@ body {
 #nextButton:active {
     transform: translateX(-50%) translateY(1px);
 }
+
+#gameTitle {
+    font-size: 48px; /* タイトルのフォントサイズ */
+    color: white; /* 白い文字 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 影をつけて読みやすく */
+    margin-bottom: 20px; /* ボタンとの間にスペース */
+    text-align: center; /* 中央揃え */
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    font-family: 'Arial', sans-serif; /* フォントを指定 */
+}
+

@@ -1,0 +1,152 @@
+body {
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#opening-screen {
+  padding: 20px;
+}
+
+#start-game {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#start-game:hover {
+  background-color: #ff1493;
+}
+
+#game-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 20px auto;
+  border: 5px solid #ff69b4;
+  border-radius: 20px;
+  background-color: #fff0f5;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.map-tile {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ff69b4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.map-tile:hover {
+  transform: scale(1.2);
+}
+
+#player-marker {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: translate(+12%, +12%);
+  transition: left 0.3s ease, top 0.3s ease;
+}
+
+
+.start-tile {
+  background-color: #ff6347;
+}
+
+.event-tile {
+  background-color: #ffa500;
+}
+
+.trap-tile {
+  background-color: #ff4500;
+}
+
+.bonus-tile {
+  background-color: #32cd32;
+}
+
+.normal-tile {
+  background-color: #1e90ff;
+}
+
+#controls {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#roll-dice {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#roll-dice:hover {
+  background-color: #ff1493;
+}
+
+#dice-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 3px solid #ff69b4;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.dialog button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dialog button:hover {
+  background-color: #ff1493;
+}

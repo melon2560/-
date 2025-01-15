@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shooting Game</title>
     <link rel="stylesheet" href="Shooting.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
 </head>
 <body>
     <canvas id="gameCanvas"></canvas>
@@ -16,9 +17,10 @@
         <div class="dialog-content">
             <h2>Game Over</h2>
             <p id="finalScore"></p>
-            <button id="continueButton">Continue</button>
+            <button id="continueButton" onclick="location.href='../map/u-22_map1.html'">マップに戻る</button>
         </div>
     </div>
     <script src="Shooting.js"></script>
+    <audio id="bgm" src="../bgm/追跡者.mp3" loop></audio>
 </body>
 </html>

@@ -11,6 +11,8 @@ const dialogues = [
 let currentDialogue = 0;
 
 document.getElementById('startButton').addEventListener('click', function() {
+    var bgm = document.getElementById('bgm');
+    bgm.play();
     this.style.display = 'none';
     document.getElementById('dialogueArea').style.display = 'block';
     showDialogue();
@@ -32,6 +34,13 @@ document.body.addEventListener('click', function() {
 });
 
 document.getElementById('nextButton').addEventListener('click', function() {
+    //event.preventDefault(); // デフォルト動作をキャンセル
+    let score = 0;
+    let minigemecount = 0; // ミニゲームの順番を指定
+    let currentIndex =0;
+    localStorage.setItem('game', minigemecount);
+    localStorage.setItem('iti', currentIndex);
+    localStorage.setItem('score', score);
     window.location.href = 'u-22_map1.html';
 });
 

@@ -1,4 +1,4 @@
-const sentences = [
+/*const sentences = [
     { kanji: "今日の天気は晴れですが、明日は雨が降るでしょう。", romaji: "kyounotenkiwaharedesugaashitawaamegafurudeshou" },
     { kanji: "この本はとても面白くて、一気に読んでしまいました。", romaji: "konohonwatotemoomoshirokuiteikkiniyondeshimaimashita" },
     { kanji: "彼は毎朝ジョギングをして健康を保っています。", romaji: "karewamaisajoginguoshitekenkouotamotteimasu" },
@@ -9,11 +9,18 @@ const sentences = [
     { kanji: "昨日の夜は遅くまで仕事をしていました。", romaji: "kinounoyoruwaosokumadeshigotowoshiteimashita" },
     { kanji: "来週の金曜日に友達と旅行に行きます。", romaji: "raishuukinyoubitomodachitoryokouniikimasu" },
     { kanji: "毎日コーヒーを飲むのが私の習慣です。", romaji: "mainichikoohiwononunogawatashinoshuukandesu" }
+];*/
+const sentences = [
+    { kanji: "今日の天気は晴れですが、明日は雨が降るでしょう。", romaji: "a" },
+    
 ];
 
 let currentSentenceIndex = 0;
 let startTime;
 let timerInterval;
+
+let score = parseInt(localStorage.getItem('score'), 10) || 0; // 初期化を0に設定
+let thisscor = 200;
 
 document.getElementById('start-button').addEventListener('click', startCountdown);
 document.getElementById('input').addEventListener('input', handleInput);
@@ -37,6 +44,8 @@ function startCountdown() {
 }
 
 function startGame() {
+    var bgm = document.getElementById('bgm');
+    bgm.play();
     currentSentenceIndex = 0;
     startTime = new Date().getTime();
     displaySentence();
@@ -68,9 +77,33 @@ function handleInput(event) {
             } else {
                 const endTime = new Date().getTime();
                 const timeTaken = (endTime - startTime) / 1000;
-                document.getElementById('result').textContent = `お疲れ様でした！タイム: ${timeTaken}秒`;
+                if (timeTaken < 120) {
+                     // 非常に早い
+                    thisscor = 50;
+                  } else if (timeTaken >= 120 && timeTaken <= 150) {
+                    // 早い
+                    thisscor = 30;
+                  } else if (timeTaken > 150 && timeTaken <= 180) {
+                    // 普通
+                    thisscor = 20;
+                  } else {
+                    // 遅い
+                    thisscor = 0;
+                  }
+                score += thisscor;
+                document.getElementById('result').textContent = `お疲れ様でした！タイム: ${timeTaken}秒 スコア: ${thisscor} 合計スコア: ${score}`;
                 document.getElementById('input').disabled = true;
                 clearInterval(timerInterval);
+                //document.getElementById('continue-button').style.display = 'flex';
+                localStorage.setItem('score', score);
+                //resultDialog.style.display = 'block';
+                const continueButton = document.getElementById('continue-button');
+                if (continueButton) {
+                    continueButton.style.display = 'block'; // 'flex' に変更も可
+                } else {
+                    console.error('continue-button が見つかりません');
+                }
+                
             }
         }
     } else {

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新潟クイズ</title>
+    <title>クイズfever</title>
     <link rel="stylesheet" href="quiz.css">
     <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
 </head>
 <body>
     <div class="quiz-container">
-        <h1 id="quiz-title">新潟クイズ</h1>
+        <h1 id="quiz-title">クイズfever</h1>
         <div id="category-container">
-            <button class="btn category-btn c-btn circle" data-category="general">一番高いもの</button>
-            <button class="btn category-btn c-btn circle" data-category="science">自然</button>
+            <button class="btn category-btn c-btn circle" data-category="general">一般知識</button>
+            <button class="btn category-btn c-btn circle" data-category="science">科学</button>
             <button class="btn category-btn c-btn circle" data-category="history">歴史</button>
-            <button class="btn category-btn c-btn circle" data-category="sports">交通</button>
-            <button class="btn category-btn c-btn circle" data-category="pc">佐渡</button>
+            <button class="btn category-btn c-btn circle" data-category="sports">スポーツ</button>
+            <button class="btn category-btn c-btn circle" data-category="pc">PC</button>
         </div>
         <div id="question-container" class="hide">
             <div id="question">質問がここに表示されます</div>
@@ -32,11 +32,11 @@
             <span id="close-btn" class="close-btn">&times;</span>
             <p id="result">結果がここに表示されます</p>
             <p>現在のスコア<span id="kasanScore"></span></p>
-            <button id="reset-btn" class="reset-btn btn" onclick="location.href='../u-22(map3)/u-22_map3.html'">次のマップへ</button>
+            <button id="reset-btn" class="reset-btn btn" onclick="location.href='../map/u-22_map1.html'">マップに戻る</button>
         </div>
     </div>
 
     <script src="quiz.js"></script>
-    <audio id="bgm" src="bgm/maou_bgm_8bit13.mp3" loop></audio>
+    <audio id="bgm" src="../bgm/おやおや？.mp3" loop></audio>
 </body>
 </html>

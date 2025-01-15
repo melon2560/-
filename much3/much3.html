@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Match-3 パズルゲーム</title>
     <link rel="stylesheet" href="much3.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
 </head>
 <body>
     <div id="game-container">
@@ -23,10 +24,11 @@
             </div>
         </div>
         <div id="end-screen" style="display:none;">
-            <p>最終スコア: <span id="final-score"></span></p>
-            <button id="end-button">終了</button>
+            <p>スコア: <span id="final-score"></span></p>
+            <button id="end-button">エンディングへ</button>
         </div>
     </div>
     <script src="much3.js"></script>
+    <audio id="bgm" src="../bgm/カナリアスキップ.mp3" loop></audio>
 </body>
 </html>

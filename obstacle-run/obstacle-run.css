@@ -22,7 +22,7 @@ body {
     bottom: 0;
     width: 30px;
     height: 30px;
-    background-color: transparent;
+    background-color: #ff6f00;
     border-radius: 5px;
   }
   
@@ -71,4 +71,24 @@ body {
     color: #00796b;
     font-weight: bold;
   }
+
+  /* ダイアログ用のスタイル */
+#gameOverDialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border: 2px solid black;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#gameOverDialog button {
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
   

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>すごろくゲーム</title>
+  <link rel="stylesheet" href="map.css">
+</head>
+<body>
+  <div id="opening-screen">
+    <h1>すごろくげむー</h1>
+    <button id="start-game">ゲーム開始</button>
+  </div>
+  <div id="game-container" class="hidden">
+    <div id="map-container"></div>
+    <div id="controls">
+      <button id="roll-dice">サイコロを振る</button>
+      <span id="dice-value">0</span>
+      <div>ターン数: <span id="turn-count">1</span></div>
+      <div>スコア: <span id="player-score">0</span></div>
+      <div id="tile-effect-display"></div>
+    </div>
+  </div>
+  <div id="tile-content-dialog" class="dialog hidden">
+    <div id="tile-content-message"></div>
+    <button id="ok-tile-content">OK</button>
+  </div>
+  <div id="dialog-container" class="dialog hidden">
+    <p>ミニゲームに行きますか？</p>
+    <button id="play-minigame">はい</button>
+    <button id="close-dialog">いいえ</button>
+  </div>
+  <script src="map.js"></script>
+</body>
+</html>

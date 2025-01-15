@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nextMapButton.addEventListener('click', () => {
         // 次のマップへの移動処理
-        window.location.href = '../u-22(map2)/u-22_map2.html'; // 次のマップのURLに変更してください
+        window.location.href = '../map/u-22_map1.html'; // 次のマップのURLに変更してください
     });
 
     keeper.style.left = `${keeperPositions[0].left}px`;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>タイピングゲーム</title>
     <link rel="stylesheet" href="typing.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
 </head>
 <body>
     <div id="title-screen" class="container">
@@ -22,7 +23,14 @@
         </div>
         <input type="text" id="input" autofocus>
         <p id="result"></p>
+        <p id="result">
+            <button id="continue-button" onclick="location.href='../map/u-22_map1.html'" style="display: none;">
+                マップに戻る
+            </button>
+        </p>
+        
     </div>
     <script src="typing.js"></script>
+    <audio id="bgm" src="../bgm/Sparkling_sea.mp3" loop></audio>
 </body>
 </html>

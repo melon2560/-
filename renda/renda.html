@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>連打数を競うゲーム</title>
     <link rel="stylesheet" href="renda.css">
+    <link rel="icon" href="img/fabiconB.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -12,7 +13,11 @@
         <button id="startButton">スタート</button>
         <p id="message">スタートボタンを押してゲームを始めてください</p>
         <p id="countDisplay">連打数: 0</p>
+        <button id="continue-button" onclick="location.href='../map/u-22_map1.html'" style="display: none;">
+            マップに戻る
+        </button>
     </div>
     <script src="renda.js"></script>
+    <audio id="bgm" src="../bgm/パーティーはハチャメチャ大騒ぎ.mp3" loop></audio>
 </body>
 </html>

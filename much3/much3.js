@@ -11,12 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const endButton = document.getElementById('end-button');
     const tileColors = ['#ff1744', '#fbc02d', '#64dd17', '#00b0ff', '#d500f9'];
 
-    let movesLeft = 2;
+    let movesLeft = 5;
     let currentScore = 0;
     let draggedTile = null;
     let targetTile = null;
 
+    let score = parseInt(localStorage.getItem('score'), 10) || 0; // 初期化を0に設定
+
     function startGame() {
+        var bgm = document.getElementById('bgm');
+        bgm.play();
         document.getElementById('opening-screen').style.display = 'none';
         countdownScreen.style.display = 'block';
         let countdown = 3;
@@ -242,11 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function endGame() {
         gameScreen.style.display = 'none';
         endScreen.style.display = 'block';
-        finalScoreElement.textContent = currentScore;
+        score += currentScore;
+        localStorage.setItem('score', score);
+        finalScoreElement.textContent = currentScore + "最終スコア:" + score;
     }
 
     startButton.addEventListener('click', startGame);
     endButton.addEventListener('click', () => {
-        window.location.href = 'end.html'; // リダイレクト先のURL
+        window.location.href = '../map/ending.html'; // リダイレクト先のURL
     });
 });

@@ -14,6 +14,8 @@ const cols = 20;
 const rows = 20;
 let timer = 0;
 let timerInterval;
+let score = parseInt(localStorage.getItem('score'), 10) || 0; // 初期化を0に設定
+let thisscor = 60;
 
 canvas.width = cols * cellSize;
 canvas.height = rows * cellSize;
@@ -135,6 +137,7 @@ function movePlayer(event) {
     if (player.x === goal.x && player.y === goal.y) {
         clearInterval(timerInterval);
         showResultDialog();
+        document.removeEventListener('keydown', movePlayer); // キーボード入力を無効化
     }
 
     drawGame();
@@ -148,6 +151,8 @@ function drawGame() {
 }
 
 function startGame() {
+    var bgm = document.getElementById('bgm');
+    bgm.play();
     startButton.disabled = true;
     let countdown = 3;
     countdownDisplay.textContent = 'ゲーム開始まで: ' + countdown + '秒';
@@ -173,7 +178,10 @@ function startGame() {
 }
 
 function showResultDialog() {
-    resultMessage.textContent = 'ゴールに到達しました！ 経過時間: ' + timer + '秒';
+    thisscor -= timer;
+    score += thisscor;
+    resultMessage.textContent = 'ゴールに到達しました！ 経過時間: ' + timer + '秒 スコア:' + thisscor + '現在のスコア:' + score;
+    localStorage.setItem('score', score);
     resultDialog.style.display = 'block';
 }
 

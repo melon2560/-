@@ -12,6 +12,8 @@ const dialogues = [
 let currentDialogue = 0;
 
 document.getElementById('startButton').addEventListener('click', function() {
+    var bgm = document.getElementById('bgm');
+    bgm.play();
     this.style.display = 'none';
     document.getElementById('dialogueArea').style.display = 'block';
     showDialogue();
@@ -33,7 +35,7 @@ document.body.addEventListener('click', function() {
 });
 
 document.getElementById('nextButton').addEventListener('click', function() {
-    window.location.href = 'u-22_map1.html';
+    window.location.href = 'staffroll.html';
 });
 
 function showDialogue() {

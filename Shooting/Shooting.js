@@ -29,6 +29,9 @@ let enemyBullets = [];
 let enemySpeed = 2;
 let score = 0;
 let gameOver = false;
+let msterscore = parseInt(localStorage.getItem('score'), 10) || 0; // 初期化を0に設定
+
+let bgmcnt = 0;
 
 function drawPlayer() {
     ctx.fillStyle = player.color;
@@ -57,6 +60,7 @@ function drawEnemyBullets() {
 }
 
 function movePlayer() {
+    
     player.x += player.dx;
     player.y += player.dy;
 
@@ -184,7 +188,9 @@ function collisionDetection() {
 }
 
 function showGameOverDialog() {
-    finalScore.textContent = `Final Score: ${score}`;
+    msterscore += score;
+    localStorage.setItem('score', msterscore);
+    finalScore.textContent = `Final Score: ${score} 合計スコア: ${msterscore}`;
     gameOverDialog.classList.add('show');
 }
 
@@ -223,6 +229,11 @@ function update() {
 function keyDown(e) {
     if (e.key === 'ArrowRight' || e.key === 'Right') {
         player.dx = player.speed;
+        if(bgmcnt == 0){
+            var bgm = document.getElementById('bgm');
+            bgm.play();
+            bgmcnt++;
+        }
     } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
         player.dx = -player.speed;
     } else if (e.key === 'ArrowUp' || e.key === 'Up') {
